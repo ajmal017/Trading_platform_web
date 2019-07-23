@@ -3,6 +3,11 @@
     resize();
     $(window).resize(function(event) {
         resize();
+        if($(window).width()>1200){
+            $(".header .wrap .frt").show()
+        }else{
+            $(".header .wrap .frt").hide()
+        }
     });
 
 
@@ -27,6 +32,17 @@
             $(".submenu").css('top','120px')
             if (isindex) { $(".header").addClass("pos"); }
         }
+        if($(window).scrollTop() > 400){
+            $(".NAB_rightbar_l ul li:last-child").show() 
+        }else{
+            $(".NAB_rightbar_l ul li:last-child").hide() 
+        }
+    })
+    $(".NAB_rightbar_l ul li:last-child").click(function(){
+        $(window).scrollTop(0)
+    })
+    $("#closemodal").click(function(){
+        $("#modalbox").hide()
     })
 
     $(".bottom").click(function () {
